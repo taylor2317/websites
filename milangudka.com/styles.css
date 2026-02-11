@@ -338,6 +338,7 @@ price {
     transition: 0.5s;
 }
 
+
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -1005,7 +1006,6 @@ form button:active {
         display: none;
     }
 
-    /* Make cursor indicate clickable for interactive elements */
     a, button, input[type="button"], input[type="submit"],
     [onclick], [role="button"], [tabindex],
     .menuButton, .actionButt a, .cvButt a, .butt a, .menuList a,
@@ -1013,9 +1013,8 @@ form button:active {
         cursor: pointer;
     }
 
-    /* Ensure icons that are interactive show pointer on hover too */
     .card i, .portCard i, .soloCard i, i.fa, svg {
-        cursor: default;/* default for non-clickable icons */
+        cursor: default;
     }
     [onclick] i, [role="button"] i, [tabindex] i, .socials a i, .footer i, .fa-droplet-slash {
         cursor: pointer;
@@ -1095,33 +1094,29 @@ form button:active {
     }
 }
 
-/* Constrain timeline to pageBlock on mobile without changing layout */
 @media (max-width: 799px) {
-  .pageBlock .timeline {
-    max-width: 100%;
-    width: 100%;
-    overflow-x: hidden;          /* prevent horizontal scroll */
-  }
+    .pageBlock .timeline {
+        max-width: 100%;
+        width: 100%;
+        overflow-x: hidden;
+    }
 
-  /* Prevent boxes from exceeding container */
-  .pageBlock .timelineBox {
-    max-width: 100%;
-    width: min(100%, 75vw);     /* keep your responsive sizing but clamp */
-    min-width: 0;              /* remove 220px min that causes overflow */
-    box-sizing: border-box;
-  }
+    .pageBlock .timelineBox {
+        max-width: 100%;
+        width: min(100%, 100vw);
+        min-width: 0;
+        box-sizing: border-box;
+    }
 
-  /* Reduce side padding that pushes items outside */
-  .pageBlock .timelineLeft {
-    padding-right: 20px;       /* was 50px */
-  }
+    .pageBlock .timelineLeft {
+        padding-right: 20px;
+    }
 
-  .pageBlock .timelineRight {
-    padding-left: 20px;        /* was 50px */
-  }
+    .pageBlock .timelineRight {
+        padding-left: 20px;
+    }
 
-  /* Ensure 50% columns don't exceed container due to padding */
-  .pageBlock .timelineItem {
-    box-sizing: border-box;
-  }
+    .pageBlock .timelineItem {
+        box-sizing: border-box;
+    }
 }
