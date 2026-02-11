@@ -1,16 +1,26 @@
 # COLOUR PALETTE:
-#008080ff <br>
-#15b295ff <br>
-#ffffffff <br>
-#d3d3d3ff <br>
-#000000ff
+#15B295FF <br>
+#15B295EE <br>
+#008080FF <br>
+#008080EE <br>
+#00808066 <br>
+#0080804D <br>
+#FF0000FF <br>
+#FFFFFFFF <br>
+#F9F9F9FF <br>
+#F0F0F0FF <br>
+#E0E0E0FF <br>
+#D3D3D3FF <br>
+#808080FF <br>
+#000000FF <br>
+#00000000
 
 # SITE LINK:
 https://milangudka.com/
 
 # HEADER:
 ```htm
-<!DOCTYPE html">
+<!DOCTYPE "html">
 <html lang="en">
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2532383532152118"
@@ -23,7 +33,7 @@ https://milangudka.com/
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display&display=swap" rel="stylesheet">
     <title>Milan Gudka</title>
     <meta name="description" content="Milan Gudka Personal Portfolio">
-    <link rel="icon" href="/Resources/Logo.png">
+    <link rel="icon" href="/Resources/Logo.svg">
 </head>
 <body>
     <div class="header">
