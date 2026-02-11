@@ -8,7 +8,7 @@ body{
     width: 100vw;
     transition: 0.5s;
     font-size: small;
-} 
+}
 
 html {
     overflow-x: hidden;
@@ -43,8 +43,8 @@ html {
 
 .menuList {
     display: none;
-    background-color: white;  
-    padding:5%;
+    background-color: white;
+    padding: 5%;
     text-align: center;
 }
 
@@ -57,12 +57,81 @@ html {
     margin-left: 5%;
 }
 
-.backUp {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    margin: 2%;
-    display: none;
+hr {
+    background-image: linear-gradient(to bottom right, #008080ee, #15b295ee);
+    height: 0.5px;
+    border: none;
+}
+
+.projText {
+    padding-bottom: 3%;
+}
+
+.projImg {
+    display: block;
+    text-align: center;
+}
+
+.projImg img {
+    width: 90%;
+    margin: 0.5rem auto;
+    display: block;
+}
+
+.projImg p{
+    font-size: small;
+    color: gray;
+    margin: 0.5rem auto;
+    margin-top: 0.5rem;
+    font-style: italic;
+    text-align: center;
+    width: 90%;
+}
+
+@media (max-width:799px) {
+    /* Mobile: paragraph full-width, images underneath in two columns */
+    .projCols {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .projCols .projText,
+    .projCols .projImg {
+        width: 100%;
+    }
+
+    .projText {
+        padding-bottom: 1rem;
+    }
+
+    .projImg {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        align-items: start;
+    }
+
+    .projImg img {
+        width: 100%;
+        margin: 0;
+        display: block;
+    }
+
+    .projImg p {
+        margin: 0.25rem 0 0.75rem 0;
+        text-align: center;
+        font-size: small;
+        color: gray;
+    }
+
+    /* Pair each image with its caption using the DOM order */
+    .projImg img:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+    .projImg p:nth-of-type(1)   { grid-column: 1; grid-row: 2; }
+    .projImg img:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+    .projImg p:nth-of-type(2)   { grid-column: 2; grid-row: 2; }
+
 }
 
 .welcome {
@@ -155,7 +224,7 @@ price {
     padding: 3%;
 }
 
-.cv, .references {
+.cv, .references, .project {
     width: 90%;
     background-color: white;
     margin: auto;
@@ -168,7 +237,7 @@ price {
     background-image: linear-gradient(to bottom right, #008080ee, #15b295ee);
 }
 
-.cv h2, .references h3 {
+.cv h2, .references h3, .project h1, .project h2, .project h4 {
     text-align: center;
     color: teal;
 }
@@ -204,8 +273,6 @@ price {
     margin-top: 2.5%;
     width: 40%;
     border: 0px;
-    height: 0.1px;
-    background-image: linear-gradient(to bottom right, #008080ee, #15b295ee);
 }
 
 .pageBlock {
@@ -248,7 +315,7 @@ price {
     margin-bottom: 5%;
     overflow-x: hidden;
     transition: 0.3s ease;
-} 
+}
 
 .card i, .portCard i, .soloCard i {
     margin-top: 5%;
@@ -273,9 +340,7 @@ price {
 .portCard hr {
     margin-top: 25px;
     width: 75%;
-    height: 1px;
     border: transparent;
-    background-image: linear-gradient(to bottom right, #008080ee, #15b295ee);
 }
 
 .tagsCont {
@@ -312,6 +377,119 @@ price {
     height: max-content;
     white-space: nowrap;
     transition: 0.5s;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: auto;
+}
+
+.timeline::before {
+    content: '';
+    display: table;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(to bottom right,#008080ee,#15b295ee);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 1;
+}
+
+.timelineItem {
+    float: left;
+    width: 50%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.timelineItem::after {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right,#008080ee,#15b295ee);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.timelineItem::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+}
+
+.timelineLeft {
+    float: left;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+.timelineRight {
+    float: right;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+
+.timelineLeft::after {
+    right: -17px; left: auto;
+}
+.timelineLeft::before {
+    right: -11px; left: auto;}
+
+.timelineRight::after {
+    left: -17px; right: auto;
+}
+.timelineRight::before {
+    left: -11px; right: auto;
+}
+
+.timelineBox {
+    padding: 20px 30px;
+    background: transparent;
+    color: teal;
+    position: relative;
+    border-radius: 6px;
+    display: block;
+    width: 25vw;
+    max-width: 420px;
+    min-width: 220px;
+    text-align: center;
+}
+
+.timelineItem:nth-child(odd) {
+    margin-top: 0;
+}
+
+.timelineItem:nth-child(even) {
+    margin-top: 80px
+} 
+
+.timeline a {
+    color: black;
+    text-decoration: none;
 }
 
 .contForm {
@@ -561,6 +739,31 @@ form button:active {
     margin-right: 60%;
 }
 
+.project {
+    padding: 1%;
+    padding-bottom: 2.5%;
+}
+
+.project h1, .project h2, .project h3, .project h4, .project a {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.projBody {
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
+}
+
+.project h2 i, .project h3 {
+    color: teal;
+}
+
+.projCols {
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
+}
 
 @media (min-width:800px){
     body, a, html {
@@ -642,7 +845,7 @@ form button:active {
         transition: 0.3s ease;
     }
 
-    .card:hover i, .portCard:hover i, .soloCard:hover i {
+    .card:hover i, .portCard:hover i, .soloCard:hover i, .project h2 i:hover {
         transform: rotate(15deg);
     }
 
@@ -710,6 +913,38 @@ form button:active {
 
     .contForm a:hover{
         text-shadow: 2px 2px 10px lightgrey;
+    }
+
+    .projCols {
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .projText {
+        width: 70%;
+        padding-bottom: 0;
+    }
+
+    .projImg {
+        width: 25%;
+    }
+
+    .projImg img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .projImg p{
+        margin: 0;
+        margin-top: 3%;
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+    .timeline a:hover {
+        color: teal;
+        font-size: 105%;
     }
 }
 
@@ -854,14 +1089,4 @@ form button:active {
         transition: 0.2s;
         text-shadow: 0px 0px 10px #15b295;
     }
-
 }
-
-/* Force every element to use a 0.5s transition for hover effects */
-/* This ensures consistent hover animations across the site. */
-* {
-    transition: all 0.5s ease !important;
-}
-
-/* If you prefer a lighter scope, replace the rule above with a targeted list
-   of interactive elements instead. */
