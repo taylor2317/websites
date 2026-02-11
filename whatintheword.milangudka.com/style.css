@@ -3,6 +3,7 @@ body {
     background-image: url("Background.jpg"); /* Set background image */
     background-size: cover; /* Make sure the background image covers the entire body */
     font-family: Funnel Display; /* Set the custom font for the body */
+    overflow: hidden;
 }
 
 /* Header styling */
@@ -21,7 +22,7 @@ body {
 }
 
 /* Header links and titles styling */
-.header a, .page h1, .settButt a, .selPage h1{
+.header a, .page a, .settButt a, .selPage a{
     color: darkgreen; /* Set link and heading color to dark green */
     text-decoration: none; /* Remove underline from links */
 }
@@ -38,12 +39,16 @@ body {
 }
 
 /* Page and selection page heading styling */
-.page h1, .selPage h1, .endAct h2 {
+.page a h1, .selPage a h1, .endAct h2 {
     width: max-content; /* Set width to content size */
     text-align: center; /* Center text */
     background-color: #ffffffb3; /* Semi-transparent white background */
     padding: 2%;
     margin-bottom: 1px; /* Add small margin at bottom */
+}
+
+.page a, .selPage a{
+    margin-bottom: 6px;
 }
 
 /* Popup styling, hidden by default */
@@ -61,6 +66,10 @@ body {
     align-items: center;
     padding: 2%;
     font-size: small;
+}
+
+.popup h1, .popup h2, .popup .fa {
+    color: black;
 }
 
 /* Close button (X) in popup */
@@ -210,14 +219,16 @@ td {
     .page, .selPage {
         margin-top: 10vw; /* Adjust margin for larger screens */
         height: max-content; /* Adjust height */
+        width: 100vw;
+        padding: 0;
     }
 
-    .page h1, .selPage h1 {
-        padding: 2%;
+    .page a h1, .selPage a h1{
+        padding: 10%;
     }
 
     /* Hover effect for page and selection page headers */
-    .page h1:hover, .settButt a:hover, .selPage h1:hover, .endAct h2:hover {
+    .page a h1:hover, .settButt a:hover, .selPage a h1:hover, .endAct h2:hover {
         background-color: darkgreen;
         color: white; /* Change background and text color on hover */
     }

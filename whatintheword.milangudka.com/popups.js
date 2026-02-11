@@ -1,11 +1,6 @@
 // Variable to track which button was clicked
 var clicked = 0;
 
-// Function to navigate to the 'select.html' page when the 'Play Game' button is clicked
-function play() {
-    window.location.href = 'select.html'; // Redirects to select.html
-}
-
 // Function to open the appropriate popup based on the clicked option (Instructions, Leaderboard, Settings)
 function openPopup() {
     // If the instructions button was clicked
